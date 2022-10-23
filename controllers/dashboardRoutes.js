@@ -33,7 +33,7 @@ const withAuth = require("../utils/auth");
 //   res.redirect('login');
 // }});
 module.exports = router;
-router.get("/", withAuth, (req, res) => {
+router.get('/', withAuth, (req, res) => {
   Will.findAll({
     where: {
       user_id: req.session.user_id
@@ -51,7 +51,7 @@ router.get("/", withAuth, (req, res) => {
   })
     .then(dbWillData => {
       const wills = dbWillData.map((will) => will.get({ plain: true }));
-      res.render("dashboard", {
+      res.render('dashboard', {
         ...dbWillData,
         wills,
         logged_in: req.session.logged_in

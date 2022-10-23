@@ -137,7 +137,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
       attributes: ['id', 'content', 'createdAt'],
       include: {
         model: User,
-        attributes: ["name"]
+        attributes: ['name']
       }
     });
 
