@@ -39,8 +39,8 @@ router.get('/will/:id', withAuth, async (req, res) => {
           attributes: ['name'],
         },
         {
-          model: Item,
-          attributes: ['content'],
+          // model: Item,
+          // attributes: ['content'],
         }
       ],
     });
