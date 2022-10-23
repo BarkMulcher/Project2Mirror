@@ -75,11 +75,29 @@ router.get('/will/:id', withAuth, async (req, res) => {
     console.log(typeof will.items);
     console.log(itemSpecs);
     
-      res.render('will', {
+    let htmlString = JSON.stringify({
       ...will,
       itemData,
       logged_in: req.session.logged_in
-    });
+    })
+    //   res.render('will', {
+    //   ...will,
+    //   itemData,
+    //   logged_in: req.session.logged_in
+    // });
+    //res.render('will', htmlString);
+    const result = {
+      ...will,
+      itemData,
+      logged_in: req.session.logged_in,
+      testval: "1231"
+    }
+
+    console.log("result------", result)
+    res.render('will',  result, function(err, html)  {
+      console.log("html---", html)
+      res.send(html)
+    })
 
   } catch (err) {
     res.status(500).json(err);

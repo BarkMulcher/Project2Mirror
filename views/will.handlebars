@@ -1,5 +1,6 @@
 {{#if logged_in}}
 <div class="card" data-willId="{{willData.id}}">
+    
     <div class="text-center">
         <h2 class="card-header">
             {{title}}
@@ -10,9 +11,22 @@
         <p>
             Created by {{user.name}} on {{format_date date_created}}
         </p>
+        <div>{{testval}}</div>
         {{!-- {{#if items.length}} --}}
         {{will.items}}
-        {{itemData}}
+      
+
+
+        <div>title is {{title}}</div>
+        <div>{{date_created}}</div>
+        <div>
+            {{#each itemData}}
+                <div style="display: flex;">
+                    <div>{{this.content}}</div>
+                    <div>{{this.createdAt}}</div>
+                </div>
+            {{/each}}
+        </div>
         {{!-- {{>items}} --}}
         {{!-- {{/each}} --}}
         {{!-- {{/if}} --}}
