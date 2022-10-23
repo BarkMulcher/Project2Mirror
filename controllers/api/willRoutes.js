@@ -10,11 +10,11 @@ router.post('/', withAuth, async (req, res) => {
             user_id: req.session.user_id
         });
 
-        await Item.bulkCreate(req.body.itemValues.map((item_name) => {
+        await Item.bulkCreate(req.body.itemValues.map((item) => {
             return {
                 will_id: newWill.id,
                 user_id: req.session.user_id,
-                content: item_name
+                content: item
             }
         }))
 
