@@ -61,19 +61,23 @@ router.get('/will/:id', withAuth, async (req, res) => {
 
     const itemData = itemDataDb.map(item => item.get({ plain: true }));
 
-    const itemSpecs = JSON.stringify(itemData[2].content);
-   
+
     willData.items = itemData;
+
+    const itemSpecs = (JSON.stringify(itemData));
+   
+    
     console.log('WILL:', will);
     console.log('ITEMS:', itemData);
     // console.log(itemData.content);
     // console.log(typeof itemData);
-    console.log(will.items);
+    console.log(will.items[1]);
     console.log(typeof will.items);
+    console.log(itemSpecs);
+    
       res.render('will', {
-      itemData,
-      itemSpecs,
       ...will,
+      itemData,
       logged_in: req.session.logged_in
     });
 

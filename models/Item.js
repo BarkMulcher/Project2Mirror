@@ -11,7 +11,7 @@ Item.init(
             autoIncrement: true,
             primaryKey: true
         },
-        itemName: {
+        item_name: {
             type: DataTypes.TEXT,
             allowNull: true,
         },
