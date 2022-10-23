@@ -11,25 +11,17 @@
         <p>
             Created by {{user.name}} on {{format_date date_created}}
         </p>
-        <div>{{testval}}</div>
-        {{!-- {{#if items.length}} --}}
-        {{will.items}}
-      
-
-
-        <div>title is {{title}}</div>
-        <div>{{date_created}}</div>
+        
         <div>
             {{#each itemData}}
-                <div style="display: flex;">
+                <div>
                     <div>{{this.content}}</div>
-                    <div>{{this.createdAt}}</div>
+                    <br>
+                    <div>added: {{this.createdAt}}</div>
                 </div>
             {{/each}}
         </div>
-        {{!-- {{>items}} --}}
-        {{!-- {{/each}} --}}
-        {{!-- {{/if}} --}}
+
   
 
     </div>
