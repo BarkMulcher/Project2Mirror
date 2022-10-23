@@ -143,7 +143,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
 
     const will = await willData.get({ plain: true });
 
-    const itemData = itemDataDb.map(item => item.get({ plain: true }));
+    const itemData = itemDataDb.map(item_name => item_name.get({ plain: true }));
     willData.items = itemData;
     console.log('WILL:', will);
     console.log('ITEMS:', itemData);
