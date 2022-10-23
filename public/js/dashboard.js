@@ -10,7 +10,7 @@ const createBtnHandler = async (event) => {
     });
 
     if (title && content && item_name) {
-        const response = await fetch(`/api/wills`, {
+        const response = await fetch('/api/wills', {
             method: 'POST',
             body: JSON.stringify({ title, content, item_name, itemValues }),
             headers: {
