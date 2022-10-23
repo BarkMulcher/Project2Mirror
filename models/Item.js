@@ -22,15 +22,15 @@ Item.init(
         will_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: "will",
-                key: "id"
+                model: 'will',
+                key: 'id'
             }
         },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: "user",
-                key: "id"
+                model: 'user',
+                key: 'id'
             }
         },
     },
@@ -40,7 +40,7 @@ Item.init(
         updatedAt: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "item"
+        modelName: 'item'
     }
 )
 
