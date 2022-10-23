@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     // serialize data so the handlebars template can read it
     const wills = willData.map((will) => will.get({ plain: true }));
 
-    res.render("homepage", {
+    res.render('homepage', {
       wills,
       logged_in: req.session.logged_in
     });
@@ -50,10 +50,10 @@ router.get('/will/:id', withAuth, async (req, res) => {
       where: {
         will_id: req.params.id
       },
-      attributes: ["id", "content", "createdAt"],
+      attributes: ['id', 'content', 'createdAt'],
       include: {
         model: User,
-        attributes: ["name"]
+        attributes: ['name']
       }
     });
 
@@ -134,7 +134,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
         will_id: req.params.id,
         user_id: req.session.user_id
       },
-      attributes: ["id", "content", "createdAt"],
+      attributes: ['id', 'content', 'createdAt'],
       include: {
         model: User,
         attributes: ["name"]
