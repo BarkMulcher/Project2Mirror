@@ -8,11 +8,12 @@ User.hasMany(Will, {
 });
 
 User.hasMany(Item, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 Will.hasMany(Item, {
-    foreignKey: 'will_id'
+    foreignKey: 'will_id',
 });
 
 Will.belongsTo(User, {
@@ -24,7 +25,8 @@ Item.belongsTo(User, {
 });
 
 Item.belongsTo(Will, {
-    foreignKey: 'will_id'
+    foreignKey: 'will_id',
+    onDelete: 'CASCADE'
 });
 
 module.exports = { User, Will, Item };
