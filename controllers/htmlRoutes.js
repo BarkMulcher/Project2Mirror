@@ -63,34 +63,19 @@ router.get('/will/:id', withAuth, async (req, res) => {
 
 
     willData.items = itemData;
-
-    const itemSpecs = (JSON.stringify(itemData));
    
     
     console.log('WILL:', will);
     console.log('ITEMS:', itemData);
-    // console.log(itemData.content);
-    // console.log(typeof itemData);
     console.log(will.items[1]);
-    console.log(typeof will.items);
-    console.log(itemSpecs);
+    // console.log(typeof will.items);
     
-    let htmlString = JSON.stringify({
-      ...will,
-      itemData,
-      logged_in: req.session.logged_in
-    })
-    //   res.render('will', {
-    //   ...will,
-    //   itemData,
-    //   logged_in: req.session.logged_in
-    // });
-    //res.render('will', htmlString);
+
+
     const result = {
       ...will,
       itemData,
       logged_in: req.session.logged_in,
-      testval: "1231"
     }
 
     console.log("result------", result)

@@ -1,18 +1,18 @@
-<div class="row">
+<div class="row align-items-center text-dark">
   <div class="col-auto">
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
+<div class="row mt-4 align-items-center text-dark">
+  <div class="col-md-6 align-items-center text-dark">
 
-    <h3>Create Your Will:</h3>
+    <h3>Create Your Will</h3>
 
-    <form class="form new-will-form">
+    <form class="form new-will-form align-items-center text-dark">
       <div class="form-group">
         <label for="will-title">Will Title:</label>
-        <input class="form-input" type="text" id="will-title" name="will-title"/>
+        <input class="form-input" type="text" id="will-title" name="will-title" />
       </div>
       <div class="form-group">
         <label for="item-desc">Items:</label>
@@ -30,7 +30,7 @@
   </div>
 
   {{#if wills.length}}
-  <div class="col-md-6 will-list">
+  <div class="col-md-6 will-list text-dark">
     <h3>Your Will:</h3>
 
     {{#each wills as |will|}}
